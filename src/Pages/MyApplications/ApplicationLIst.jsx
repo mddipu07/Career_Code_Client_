@@ -1,8 +1,8 @@
 import React, { use } from 'react';
 import JobApplicationRow from './JobApplicationRow';
 
-const ApplicationLIst = ({myapplication}) => {
-        const applications = use(myapplication);
+const ApplicationLIst = ({myApplicationPromise}) => {
+        const applications = use(myApplicationPromise);
         console.log(applications);
     return (
         <div>

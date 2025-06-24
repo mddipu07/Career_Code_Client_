@@ -10,7 +10,7 @@ const ViewApplications = () => {
     const handleStatusChange = (e, app_id) =>{
            console.log(e.target.value,app_id);
 
-           axios.patch(`http://localhost:3000/applications/${app_id}` , {status : e.target.value}).then(res => {
+           axios.patch(`https://career-code-server-mocha.vercel.app/applications/${app_id}` , {status : e.target.value}).then(res => {
             console.log(res.data);
             if(res.data.modifiedCount){
                     Swal.fire({

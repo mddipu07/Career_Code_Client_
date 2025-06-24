@@ -1,8 +1,9 @@
 import React, { use } from 'react';
 import { Link } from 'react-router';
 
-const JobList = ({jobPromise}) => {
-    const jobs = use(jobPromise)
+const JobList = ({jobsCreatedByPromise}) => {
+    const jobs = use(jobsCreatedByPromise)
+    console.log(jobs);
     return (
         <div>
             <h2 className="text-3xl">Jobs created by you: {jobs.length}</h2>

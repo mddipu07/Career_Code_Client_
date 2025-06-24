@@ -1,16 +1,17 @@
 import React, { Suspense } from 'react';
 import useAuth from '../../Hooks/useAuth';
 import JobList from './JobList';
-import { jobsCreatedByPromise } from '../../API/JobsApi';
+import useJobApi from '../../API/useJobApi';
+
 
 const MyPostedJobs = () => {
     const {user} = useAuth();
-    const jobPromise = jobsCreatedByPromise(user?.email)
+    const {jobsCreatedByPromise} = useJobApi()
     return (
         <div>
             <h2>My Posted Jobs : </h2>
             <Suspense>
-                <JobList jobPromise={jobPromise}>
+                <JobList jobsCreatedByPromise={jobsCreatedByPromise(user.email)}>
 
                 </JobList>
             </Suspense>
